@@ -1,0 +1,32 @@
+get http://localhost:3000/places?text=rua castelo branco,520, cariacia , es
+
+###
+@originId =EkpSLiBJbGRhIFJob3IsIDEwMSAtIE1vcmFkYSBkZSBTYW50YSBGw6ksIENhcmlhY2ljYSAtIEVTLCAyOTE0Mi04NTcsIEJyYXNpbCIwEi4KFAoSCUHe84SxPrgAEWNThbbcNLFAEGUqFAoSCbEuuqmzPrgAETgTXuQcbBs4
+@destinationId =EkVSLiBDYXN0ZWxvIEJyYW5jbywgNTIwIC0gTWFyYWNhbsOjLCBDYXJpYWNpY2EgLSBFUywgMjkxNDItODcwLCBCcmFzaWwiMRIvChQKEgl53cjtvj64ABFQ6cld4Q-tChCIBCoUChIJmR44h-o-uAAR20TNxAdtx18
+
+###
+
+get http://localhost:3000/directions?originId={{ originId}}&destinationId={{ destinationId }}
+
+
+###
+
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{   
+    "name": "Rota 1",
+    "source_id": "{{ originId }}",
+    "destination_id": "{{ destinationId }}"
+
+}
+
+
+###
+
+GET http://localhost:3000/routes
+
+
+###
+
+GET http://localhost:3000/routes/6758caefc779d9addd230571
